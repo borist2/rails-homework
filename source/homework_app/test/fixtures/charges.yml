@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created: 2014-05-01 13:34:27
+  paid: false
+  amount: 1
+  currency: MyString
+  refunded: false
+  customer_id: 1
+  charge_type: MyString
+
+two:
+  created: 2014-05-01 13:34:27
+  paid: false
+  amount: 1
+  currency: MyString
+  refunded: false
+  customer_id: 1
+  charge_type: MyString

@@ -1,0 +1,95 @@
+<h1>Listing charges</h1>
+
+<h2>Failed charges</h2>
+
+<table id='failedTable'>
+  <thead>
+    <tr>
+     <th>Customer</th>
+      
+     
+      <th>Amount</th>
+     
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+	<% if charge.charge_type =='failed' %>
+	      <tr>
+		<td><%= charge.customer.firstName + " " + charge.customer.lastName %></td>
+		<td><%= charge.amount %></td>
+		<td><%= charge.created %></td>		
+		
+	      </tr>
+	<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Disputed charges</h2>
+
+<table id='disputedTable'>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      
+     
+      <th>Amount</th>
+     
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+	<% if charge.charge_type =='disputed' %>
+	      <tr>
+		<td><%= charge.customer.firstName + " " + charge.customer.lastName %></td>
+		<td><%= charge.amount %></td>
+		<td><%= charge.created %></td>		
+		
+	      </tr>
+	<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Successful charges</h2>
+
+<table id='successfulTable'>
+  <thead>
+    <tr>
+	
+      <th>Customer</th>
+      
+     
+      <th>Amount</th>
+     
+      <th>Created</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+	<% if charge.charge_type =='successful' %>
+	      <tr>
+		<td><%= charge.customer.firstName + " " + charge.customer.lastName %></td>
+		<td><%= charge.amount %></td>
+		<td><%= charge.created %></td>		
+		
+	      </tr>
+	<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>

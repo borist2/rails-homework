@@ -1,0 +1,10 @@
+require 'spec_helper'
+
+describe "Test2" do
+  describe "Number of charges in failed list" do
+    it "should have 5 failed charges" do
+      visit 'charges'
+     expect(page.find('#failedTable')).to have_content 'Andrew Chung 	'
+    end
+  end
+end
